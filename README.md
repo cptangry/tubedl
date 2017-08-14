@@ -1,6 +1,6 @@
 # Tubedl
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tubedl`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your Tubedl gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tubedl`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -22,7 +22,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'tubedl'
+
+metallica             = Tubedl::Playlist.new 'https://www.youtube.com/playlist?list=PLJvQXRgtxlumAHceNRk3cx3P7MZVUCdBl'
+first_song            = metallica.video0001
+object_instances      = metallica.instance_variables
+first_song_link       = first_song.values.first
+first_songID          = Tubedl.get_videoID(first_song_link)
+video_list            = metallica.playlist_data
+dowload_links         = metallica.playlist_data.values
+whole_page_data       = Tubedl.get_page_data(first_song_link)
+specific_resulation   = Tubedl.set_quality(first_song_link, 'hd1080')
+
+# Rusults
+puts first_song
+puts first_songID
+puts first_song_link
+puts object_instances
+puts video_list
+puts dowload_links
+# puts whole_page_data
+puts specific_resulation
+```
 
 ## Development
 
@@ -32,7 +54,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tubedl. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/cptangry/tubedl. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
