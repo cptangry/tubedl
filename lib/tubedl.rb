@@ -2,6 +2,7 @@ require_relative 'tubedl/version'
 require_relative 'tubedl/playlist_parser'
 require 'nokogiri'
 require 'open-uri'
+require 'yaml'
 
 module Tubedl
   include PlaylistParser
@@ -33,4 +34,12 @@ module Tubedl
 		end
 		doc
 	end
+
+	def self.load_playlist(file_path)
+		YAML.load_file(file_path)
+	end
+
+	def self.save_object(object)
+    File.write("#{object}.yml", object.to_yaml)
+  end
 end

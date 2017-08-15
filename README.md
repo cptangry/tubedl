@@ -25,7 +25,7 @@ Or install it yourself as:
 ```ruby
 require 'tubedl'
 
-metallica             = Tubedl::Playlist.new 'https://www.youtube.com/playlist?list=PLJvQXRgtxlumAHceNRk3cx3P7MZVUCdBl'
+
 first_song            = metallica.video0001
 object_instances      = metallica.instance_variables
 first_song_link       = first_song.values.first
@@ -34,6 +34,9 @@ video_list            = metallica.playlist_data
 dowload_links         = metallica.playlist_data.values
 whole_page_data       = Tubedl.get_page_data(first_song_link)
 specific_resulation   = Tubedl.set_quality(first_song_link, 'hd1080')
+metallica.save_playlist
+# Tubedl.load_playlist(path)
+Tubedl.save_object(metallica)
 
 # Rusults
 puts first_song
