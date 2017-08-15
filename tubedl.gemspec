@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require_relative "tubedl/version"
+require_relative "lib/tubedl/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "tubedl"
@@ -35,5 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "nokogiri", '~> 1.8'
-  
+
 end

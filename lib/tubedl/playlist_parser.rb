@@ -42,7 +42,11 @@ module PlaylistParser
 
     
     def save_playlist(song_hash)
-      File.write("Playlist-#{Time.now.to_a[3..5].join}.yml", song_hash.to_yaml)
+      File.write("Playlist-#{Time.now.to_a[3..5].join}.yml", @playlist_data.to_yaml)
+    end
+
+    def load_playlist(file_path)
+      YAML.load_file(file_path)
     end
   end
 end

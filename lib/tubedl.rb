@@ -1,5 +1,5 @@
 require_relative 'tubedl/version'
-require_relative 'tubedl/playlist_parser.rb'
+require_relative 'tubedl/playlist_parser'
 require 'nokogiri'
 require 'open-uri'
 
@@ -22,7 +22,7 @@ module Tubedl
   def self.set_quality(str, quality)
   	str + QULITIES[quality.to_sym]
 	end
-	
+
 	def self.get_page_data(url)
 		begin
 			doc = Nokogiri::HTML(open(url).read)
