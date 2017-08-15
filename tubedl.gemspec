@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
                           also can save that instance as yaml, can check a video link format with regex, can create link to specific resulation
                           can take whole page data of a link, can take video ID from link and can save object as yaml }
   spec.description   = %q{This gem parses youtube playlists to an object with an instance that named as playlist_data(hash: video_names => links)
-                          also can save that instance as yaml, can chack a video link format with regex, can create link to specific resulation
+                          also can save that instance as yaml, can check a video link format with regex, can create link to specific resulation
                           can take whole page data of a link, can take video ID from link and can save object as yaml }
   spec.homepage      = "https://github.com/cptangry/tubedl"
   spec.license       = "MIT"

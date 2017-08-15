@@ -40,6 +40,6 @@ module Tubedl
 	end
 
 	def self.save_object(object)
-    File.write("#{object}.yml", object.to_yaml)
+    File.write("#{object}.yml", YAML.dump(object))
   end
 end
