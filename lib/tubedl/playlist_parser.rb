@@ -44,5 +44,14 @@ module PlaylistParser
     def save_playlist
       File.write("Playlist-#{Time.now.to_a[3..5].join('-')}.yml", @playlist_data.to_yaml)
     end
+
+    def save_smplayer_playlist
+      f = File.open("smplayerPlaylist-#{@playlistID}-#{Time.now.to_a[3..5].join('-')}.m3u", "w+")
+      f.write("#EXTM3U\n")
+      @playlist_data.each_pair do |k, v|
+        f.puts("#EXTINF:0,#{k}\n#{v}\n")
+      end
+      f.close
+    end
   end
 end
