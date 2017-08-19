@@ -34,7 +34,11 @@ video_list            = metallica.playlist_data
 dowload_links         = metallica.playlist_data.values
 whole_page_data       = Tubedl.get_page_data(first_song_link)
 specific_resulation   = Tubedl.set_quality(first_song_link, 'hd1080')
-metallica.save_playlist # That will create a smplayer playlist
+metallica.save_playlist
+metallica.save_smplayer_playlist # That will create a smplayer playlist
+# Also can pass path as argument
+metallica.save_smplayer_playlist '/home/gcaglar/Music'
+metallica.save_playlist '/home/gcaglar/Music'
 # Tubedl.load_playlist(path)
 Tubedl.save_object(metallica)
 

@@ -11,10 +11,12 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{This gem parses youtube playlists to an object with an instance that named as playlist_data(hash: video_names => links)
                           also can save that instance as yaml, can check a video link format with regex, can create link to specific resulation
-                          can take whole page data of a link, can take video ID from link and can save object as yaml }
+                          can take whole page data of a link, can take video ID from link and can save object as yaml and also can save a smplayer
+                          compatible playlist file. Now user can pass path to save playlist for yaml and smplalyewr playlists. }
   spec.description   = %q{This gem parses youtube playlists to an object with an instance that named as playlist_data(hash: video_names => links)
                           also can save that instance as yaml, can check a video link format with regex, can create link to specific resulation
-                          can take whole page data of a link, can take video ID from link and can save object as yaml }
+                          can take whole page data of a link, can take video ID from link and can save object as yaml can save a smplayer
+                          compatible playlist file. Now user can pass path to save playlist for yaml and smplalyewr playlists.}
   spec.homepage      = "https://github.com/cptangry/tubedl"
   spec.license       = "MIT"
 
