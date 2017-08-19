@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ```ruby
 require 'tubedl'
-metallica             = Tubedl.Playlist::new 'https://www.youtube.com/playlist?list=PLJvQXRgtxlumAHceNRk3cx3P7MZVUCdBl'
+metallica             = Tubedl::Playlist.new 'https://www.youtube.com/playlist?list=PLJvQXRgtxlumAHceNRk3cx3P7MZVUCdBl'
 
 first_song            = metallica.video0001
 object_instances      = metallica.instance_variables
