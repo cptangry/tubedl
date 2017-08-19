@@ -1,9 +1,9 @@
 module PlaylistParser
   YoutubeRegex = /(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/
-  
+
   class Playlist
     attr_reader :playlistID, :playlist, :playlist_data
-    
+
     def initialize(link = nil)
       counter = 'video0000'
       link ||= link_generator
@@ -14,7 +14,7 @@ module PlaylistParser
         self.class.send(:attr_reader, counter)
       end
     end
-    
+
     def link_generator(ln = nil)
       print 'Please Enter A Correct Playlist Link: ' unless ln || ARGV[0]
       ln ||= ARGV[0] || gets.chomp
@@ -24,7 +24,7 @@ module PlaylistParser
         link_generator
       end
     end
-    
+
     def parse_page(page)
       playlist_data = page.css('table.pl-video-table')
       if playlist_data
@@ -34,13 +34,13 @@ module PlaylistParser
       end
       songs_hashes
     end
-    
+
     def is_playlist?(link)
       link.include? 'list' && 'playlist'
     end
 
 
-    
+
     def save_playlist(path_to_save = nil)
       File.write("#{path_to_save || '.'}/Playlist-#{Time.now.to_a[3..5].join('-')}.yml", @playlist_data.to_yaml)
     end
